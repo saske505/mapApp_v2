@@ -4,6 +4,8 @@ import Home from '@/components/Home'
 import SignUp from '@/components/auth/SignUp'
 import SignIn from '@/components/auth/SignIn'
 import Profile from '@/components/auth/Profile'
+import Catagory from '@/components/content/page'
+import CatagoryContent from '@/components/content/page-content'
 
 Vue.use(Router)
 
@@ -29,6 +31,18 @@ export default new Router({
       path: '/Profile',
       name: 'Profile',
       component: Profile
+    },
+    {
+      path: '/catagory',
+      name: 'Catagory',
+      component: Catagory
+    },
+    {
+      path: '/catagory/:name',
+      name: 'catagory-content',
+      component: CatagoryContent,
+      props: true
     }
+
   ]
 })
