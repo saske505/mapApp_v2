@@ -28,11 +28,11 @@ new Vue({
   render: h => h(App),
   created () {
     firebase.initializeApp({
-      apiKey: "AIzaSyAvfJO-ktZF0b2_86PDCz5wAzFXYjyDwtQ",
-authDomain: "fruity-5ddfc.firebaseapp.com",
-databaseURL: "https://fruity-5ddfc.firebaseio.com",
-projectId: "fruity-5ddfc",
-storageBucket: "fruity-5ddfc.appspot.com"
+      apiKey: 'AIzaSyAvfJO-ktZF0b2_86PDCz5wAzFXYjyDwtQ',
+      authDomain: 'fruity-5ddfc.firebaseapp.com',
+      databaseURL: 'https://fruity-5ddfc.firebaseio.com',
+      projectId: 'fruity-5ddfc',
+      storageBucket: 'fruity-5ddfc.appspot.com'
     })
   }
 })
