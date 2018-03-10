@@ -32,8 +32,13 @@
                   </v-flex>
                 </v-layout>
                 <v-layout row>
-                  <v-flex xs12>
-                    <v-btn type="submit">Sign in</v-btn>
+                    <v-flex xs12>
+                      <v-btn type="submit" :disabled="loading" :loading="loading">
+                        Sign in
+                         <span slot="loader" class="custom-loader">
+                          <v-icon light>cached</v-icon>
+                        </span>
+                    </v-btn>
                   </v-flex>
                 </v-layout>
               </form>
@@ -55,7 +60,8 @@ export default {
   data () {
     return {
       email: '',
-      password: ''
+      password: '',
+      text: 'Sign in'
     }
   },
   computed: {
@@ -64,6 +70,9 @@ export default {
     },
     error () {
       return this.$store.getters.error
+    },
+    loading () {
+      return this.$store.getters.loading
     }
   },
   watch: {
