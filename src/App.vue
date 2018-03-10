@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <v-app light-blue>
+    <v-app>
     <app-layout></app-layout>
   </v-app>
   </div>
@@ -16,6 +16,5 @@ export default {
 </script>
 
 <style lang="stylus">
-  $color-pack = false
-  @import '~vuetify/src/stylus/main'
+  @import './stylus/main';
 </style>

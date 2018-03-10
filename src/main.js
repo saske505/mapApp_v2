@@ -5,18 +5,10 @@ import App from './App'
 import * as firebase from 'firebase'
 import router from './router'
 import Vuetify from 'vuetify'
-import colors from 'vuetify/es5/util/colors'
 import 'vuetify/dist/vuetify.min.css'
 import { store } from './store'
 
-Vue.use(Vuetify, {
-  theme: {
-    primary: colors.purple.base,
-    secondary: colors.purple.base,
-    accent: colors.purple.base,
-    error: colors.purple.base
-  }
-})
+Vue.use(Vuetify)
 
 Vue.config.productionTip = false
 

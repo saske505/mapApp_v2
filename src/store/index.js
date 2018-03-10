@@ -19,8 +19,7 @@ export const store = new Vuex.Store({
         .then(
           user => {
             const newUser = {
-              id: user.uid,
-              registeredMeetups: []
+              id: user.uid
             }
             commit('setUser', newUser)
           }
@@ -36,8 +35,7 @@ export const store = new Vuex.Store({
         .then(
           user => {
             const newUser = {
-              id: user.uid,
-              registeredMeetups: []
+              id: user.uid              
             }
             commit('setUser', newUser)
           }
