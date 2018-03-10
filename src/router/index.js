@@ -8,6 +8,7 @@ import Profile from '@/components/auth/Profile'
 Vue.use(Router)
 
 export default new Router({
+  history: true,
   routes: [
     {
       path: '/',

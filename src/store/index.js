@@ -66,6 +66,10 @@ export const store = new Vuex.Store({
             console.log(error)
           }
         )
+    },
+    logout ({commit}) {
+      firebase.auth().signOut()
+      commit('setUser', null)
     }
   },
   getters: {
