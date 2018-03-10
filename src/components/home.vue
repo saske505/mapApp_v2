@@ -1,14 +1,15 @@
 <template>
   <div>
     <v-jumbotron color="light-blue" dark>
-      <v-container fill-height>
         <v-layout align-center>
           <v-flex text-xs-center>
-
+            <v-map :zoom=13 :center="[47.413220, -1.219482]">
+               <v-tilelayer url="http://{s}.tile.osm.org/{z}/{x}/{y}.png"></v-tilelayer>
+               <v-marker :lat-lng="[47.413220, -1.219482]"></v-marker>
+             </v-map>
           </v-flex>
         </v-layout>
-      </v-container>
-    </v-jumbotron>
+   </v-jumbotron>
     <v-container grid-list-md text-xs>
       <v-layout row wrap>
         <v-flex xs4 v-for="catagory in catagories" :key="catagory.name">
