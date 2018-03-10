@@ -56,17 +56,17 @@ export const store = new Vuex.Store({
         id: 9,
         name: 'Common robbery',
         catagory: '',
-        description: ''
+        description: 'is the unlawful and intentional forceful removal and appropriation of movable tangible property belonging to another. Note: The decisive factor is the use of force or violence.'
       }, {
         id: 10,
         name: 'Crimen injuria',
         catagory: '',
-        description: ''
+        description: 'is the unlawful intentional serious infringement of the dignity or privacy of another person.'
       }, {
         id: 11,
         name: 'Culpable homicide',
         catagory: '',
-        description: ''
+        description: 'consists of the unlawful, negligent causing of death of another human being.'
       }, {
         id: 12,
         name: 'Driving under the influence of alcohol or drugs',

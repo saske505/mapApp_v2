@@ -18,6 +18,8 @@
         </v-card>
       </v-flex>
     </v-layout>
+
+    <v-btn :to="'/'">Back</v-btn>
   </v-container>
 </template>
 <script>
