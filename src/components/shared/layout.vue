@@ -22,12 +22,6 @@
                </g>
              </svg>
       </v-list-tile>
-      <v-list-tile v-if="mini" @click.stop="mini = !mini">
-           <v-list-tile-action>
-             <v-icon>chevron_right</v-icon>
-           </v-list-tile-action>
-      </v-list-tile>
-
         <v-list-tile
           value="true"
           v-for="(item, i) in items"
@@ -49,13 +43,15 @@
           </v-list-tile-action>
           <v-list-tile-content>Logout</v-list-tile-content>
         </v-list-tile>
+        <v-list-tile v-if="mini" @click.stop="mini = !mini">
+             <v-list-tile-action>
+               <v-icon>chevron_right</v-icon>
+             </v-list-tile-action>
+        </v-list-tile>
       </v-list>
      </v-navigation-drawer>
       <v-toolbar fixed clipped-left app>
         <v-toolbar-side-icon @click.stop="drawer = !drawer" dark></v-toolbar-side-icon>
-        <v-toolbar-title>
-
-        </v-toolbar-title>
         <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-xs-only">
         <v-btn
