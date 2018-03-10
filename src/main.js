@@ -28,11 +28,11 @@ new Vue({
   render: h => h(App),
   created () {
     firebase.initializeApp({
-      apiKey: 'AIzaSyDIyRzOXRYzriVjb3DnqBoRMQdF1hvcMWI',
-      authDomain: 'cropchat-a6b10.firebaseapp.com',
-      databaseURL: 'https://cropchat-a6b10.firebaseio.com',
-      projectId: 'cropchat-a6b10',
-      storageBucket: 'cropchat-a6b10.appspot.com'
+      apiKey: "AIzaSyAvfJO-ktZF0b2_86PDCz5wAzFXYjyDwtQ",
+authDomain: "fruity-5ddfc.firebaseapp.com",
+databaseURL: "https://fruity-5ddfc.firebaseio.com",
+projectId: "fruity-5ddfc",
+storageBucket: "fruity-5ddfc.appspot.com"
     })
   }
 })
