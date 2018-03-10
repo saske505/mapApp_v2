@@ -1,5 +1,8 @@
 <template>
   <v-container>
+    <v-layout row v-if="error">
+      <app-alert @dismissed="onDismissed" :text="error.message"></app-alert>
+    </v-layout>
     <v-layout row>
       <v-flex xs12 sm6 offset-sm3>
         <v-card>
@@ -54,7 +57,12 @@
 </template>
 
 <script>
+import Alert from '../shared/alert'
+
 export default {
+  components: {
+    'app-alert': Alert
+  },
   data () {
     return {
       email: '',
@@ -68,6 +76,9 @@ export default {
     },
     user () {
       return this.$store.getters.user
+    },
+    error () {
+      return this.$store.getters.error
     }
   },
   watch: {
@@ -80,6 +91,9 @@ export default {
   methods: {
     onSignup () {
       this.$store.dispatch('signUserUp', {email: this.email, password: this.password})
+    },
+    onDismissed () {
+      this.$store.dispatch('clearError')
     }
   }
 }

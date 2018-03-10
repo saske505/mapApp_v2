@@ -2,6 +2,7 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
+import 'babel-polyfill'
 import * as firebase from 'firebase'
 import router from './router'
 import Vuetify from 'vuetify'
@@ -9,7 +10,6 @@ import 'vuetify/dist/vuetify.min.css'
 import { store } from './store'
 
 Vue.use(Vuetify)
-
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
