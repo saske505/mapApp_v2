@@ -6,9 +6,15 @@ import 'babel-polyfill'
 import * as firebase from 'firebase'
 import router from './router'
 import Vuetify from 'vuetify'
-import 'vuetify/dist/vuetify.min.css'
-
 import { store } from './store'
+import 'vuetify/dist/vuetify.min.css'
+import Vue2Leaflet from 'vue2-leaflet'
+
+import 'leaflet/dist/leaflet.css'
+
+Vue.component('v-map', Vue2Leaflet.Map)
+Vue.component('v-tilelayer', Vue2Leaflet.TileLayer)
+Vue.component('v-marker', Vue2Leaflet.Marker)
 
 Vue.use(Vuetify)
 Vue.config.productionTip = false
@@ -18,7 +24,8 @@ new Vue({
   el: '#app',
   router,
   store,
-  render: h => h(App),
+  template: '<App/>',
+  components: { App },
   created () {
     firebase.initializeApp({
       apiKey: 'AIzaSyAvfJO-ktZF0b2_86PDCz5wAzFXYjyDwtQ',
