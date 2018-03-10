@@ -36,6 +36,11 @@ export default {
           icon: 'home',
           title: 'Home',
           path: '/'
+        },
+        {
+          icon: 'home',
+          title: 'test',
+          path: '/'
         }
       ]
     }
