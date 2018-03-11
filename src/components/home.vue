@@ -1,14 +1,27 @@
 <template>
   <div>
     <v-jumbotron color="light-blue" dark>
+      <v-toolbar
+      floating
+      dense
+      dark
+      >
+      <v-text-field prepend-icon="search" hide-details single-line></v-text-field>
+      <v-btn icon>
+        <v-icon>my_location</v-icon>
+      </v-btn>
+      <v-btn icon>
+        <v-icon>more_vert</v-icon>
+      </v-btn>
+    </v-toolbar>
         <v-layout align-center>
           <v-flex text-xs-center>
-            <v-map ref="map" :zoom=13 :center="[47.413220, -1.219482]">
-               <v-tilelayer url="http://{s}.tile.osm.org/{z}/{x}/{y}.png"></v-tilelayer>
-               <v-marker :lat-lng="[47.413220, -1.219482]"></v-marker>
-             </v-map>
-          </v-flex>
-        </v-layout>
+  <v-map ref="map" :zoom=13 :center="[47.413220, -1.219482]">
+    <v-tilelayer url="http://{s}.tile.osm.org/{z}/{x}/{y}.png"></v-tilelayer>
+    <v-marker :lat-lng="[47.413220, -1.219482]"></v-marker>
+  </v-map>
+</v-flex>
+</v-layout>
    </v-jumbotron>
     <v-container grid-list-md text-xs>
       <v-layout row wrap>
@@ -22,7 +35,7 @@
             <v-container fluid fill-height>
               <v-layout fill-height>
                 <v-flex xs12 align-end flexbox>
-                  <span class="headline">{{ catagory.name }}</span>
+                  <span class="headline6">{{ catagory.name }}</span>
                 </v-flex>
               </v-layout>
             </v-container>

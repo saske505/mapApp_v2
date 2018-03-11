@@ -94,19 +94,19 @@ export const store = new Vuex.Store({
         id: '14',
         name: 'Kidnapping',
         catagory: '',
-        description: '',
+        description: 'This crime consists of unlawfully and intentionally depriving a person of his or her freedom of movement and/or, if such person is a child, the custodians of their control over the child.',
         count: 0
       }, {
         id: '15',
         name: 'Malicious injury to property',
         catagory: '',
-        description: '',
+        description: 'It consists of unlawfully and intentionally damaging the property of another.',
         count: 0
       }, {
         id: '16',
         name: 'Murder',
         catagory: '',
-        description: '',
+        description: 'Murder is the unlawful and intentional killing of a human being.',
         count: 0
       }, {
         id: '17',
