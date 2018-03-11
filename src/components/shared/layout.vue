@@ -3,7 +3,7 @@
     <v-navigation-drawer
         clipped
         :mini-variant="mini"
-        temporary
+        permanent
         v-model="drawer"
         app
         dark
@@ -14,6 +14,7 @@
               <v-icon>chevron_right</v-icon>
             </v-list-tile-action>
           </v-list-tile>
+           <v-divider dark></v-divider>
           <v-list-tile dark value="true" v-for="(item, i) in items" :key="i" :to="item.path" color="white">
             <v-list-tile-action dark>
               <v-icon v-html="item.icon" color="white"></v-icon>
@@ -30,6 +31,7 @@
              </v-list-tile-action>
              <v-list-tile-content>Logout</v-list-tile-content>
            </v-list-tile>
+            <v-divider dark></v-divider>
           <v-list-tile avatar tag="div">
             <v-list-tile-avatar>
             </v-list-tile-avatar>
@@ -59,28 +61,20 @@
               </g>
           </svg>
         </v-toolbar-title>
-        <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
-
       </v-toolbar>
   <v-content>
       <router-view></router-view>
  </v-content>
-  <app-footer></app-footer>
   </div>
 </template>
 <script>
-import Footer from './footer'
-
 export default {
   data () {
     return {
       drawer: null,
-      mini: false,
+      mini: true,
       cliped: false
     }
-  },
-  components: {
-    'app-footer': Footer
   },
   computed: {
     items () {
