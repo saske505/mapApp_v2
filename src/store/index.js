@@ -8,157 +8,188 @@ export const store = new Vuex.Store({
   state: {
     catagory: [
       {
-        id: 0,
+        id: '0',
         name: 'All theft not mentioned elsewhere',
         catagory: 'All-theft-not-mentioned-elsewhere',
-        description: ''
+        description: '',
+        count: 0
       }, {
-        id: 1,
+        id: '1',
         name: 'Arson',
         catagory: 'arson',
-        description: 'the criminal act of deliberately setting fire to property.'
+        description: 'the criminal act of deliberately setting fire to property.',
+        count: 0
       }, {
-        id: 2,
+        id: '2',
         name: 'Assault with the intent to inflict grievous bodily harm',
         catagory: '',
-        description: 'People are charged with this offence if they assault someone with the intent to cause, and do cause, a very serious injury.'
+        description: 'People are charged with this offence if they assault someone with the intent to cause, and do cause, a very serious injury.',
+        count: 0
       }, {
-        id: 3,
+        id: '3',
         name: 'Attempted murder',
         catagory: 'Attempted-murder',
-        description: 'attempted murder is the crime of simultaneously preparing to commit an unlawful killing and having a specific intention to cause the death of a human being'
+        description: 'attempted murder is the crime of simultaneously preparing to commit an unlawful killing and having a specific intention to cause the death of a human being',
+        count: 0
       }, {
-        id: 4,
+        id: '4',
         name: 'Burglary at non-residential premises',
         catagory: '',
-        description: ''
+        description: '',
+        count: 0
       }, {
-        id: 5,
+        id: '5',
         name: 'Burglary at residential premises',
         catagory: '',
-        description: ''
+        description: '',
+        count: 0
       }, {
-        id: 6,
+        id: '6',
         name: 'Carjacking',
         catagory: 'carjacking',
         description: ''
       }, {
-        id: 7,
+        id: '7',
         name: 'Commercial crime',
         catagory: '',
-        description: ''
+        description: '',
+        count: 0
       }, {
-        id: 8,
+        id: '8',
         name: 'Common assault',
         catagory: 'common-assault',
-        description: ''
+        description: '',
+        count: 0
       }, {
-        id: 9,
+        id: '9',
         name: 'Common robbery',
         catagory: '',
-        description: 'is the unlawful and intentional forceful removal and appropriation of movable tangible property belonging to another. Note: The decisive factor is the use of force or violence.'
+        description: 'is the unlawful and intentional forceful removal and appropriation of movable tangible property belonging to another. Note: The decisive factor is the use of force or violence.',
+        count: 0
       }, {
-        id: 10,
+        id: '10',
         name: 'Crimen injuria',
         catagory: '',
-        description: 'is the unlawful intentional serious infringement of the dignity or privacy of another person.'
+        description: 'is the unlawful intentional serious infringement of the dignity or privacy of another person.',
+        count: 0
       }, {
-        id: 11,
+        id: '11',
         name: 'Culpable homicide',
         catagory: '',
-        description: 'consists of the unlawful, negligent causing of death of another human being.'
+        description: 'consists of the unlawful, negligent causing of death of another human being.',
+        count: 0
       }, {
-        id: 12,
+        id: '12',
         name: 'Driving under the influence of alcohol or drugs',
         catagory: '',
-        description: ''
+        description: '',
+        count: 0
       }, {
-        id: 13,
+        id: '13',
         name: 'Drug-related crime',
         catagory: '',
-        description: ''
+        description: '',
+        count: 0
       }, {
-        id: 14,
+        id: '14',
         name: 'Kidnapping',
         catagory: '',
-        description: ''
+        description: '',
+        count: 0
       }, {
-        id: 15,
+        id: '15',
         name: 'Malicious injury to property',
         catagory: '',
-        description: ''
+        description: '',
+        count: 0
       }, {
-        id: 16,
+        id: '16',
         name: 'Murder',
         catagory: '',
-        description: ''
+        description: '',
+        count: 0
       }, {
-        id: 17,
+        id: '17',
         name: 'Neglect and ill-treatment of children',
         catagory: '',
-        description: ''
+        description: '',
+        count: 0
       }, {
-        id: 18,
+        id: '18',
         name: 'Public violence',
         catagory: '',
-        description: ''
+        description: '',
+        count: 0
       }, {
-        id: 19,
+        id: '19',
         name: 'Robbery at non-residential premises',
         catagory: '',
-        description: ''
+        description: '',
+        count: 0
       }, {
-        id: 20,
+        id: '20',
         name: 'Robbery at residential premises',
         catagory: '',
-        description: ''
+        description: '',
+        count: 0
       }, {
-        id: 21,
+        id: '21',
         name: 'Robbery with aggravating circumstances',
         catagory: '',
-        description: ''
+        description: '',
+        count: 0
       }, {
-        id: 22,
+        id: '22',
         name: 'Shoplifting',
         catagory: '',
-        description: ''
+        description: '',
+        count: 0
       }, {
-        id: 23,
+        id: '23',
         name: 'Stock-theft',
         catagory: '',
-        description: ''
+        description: '',
+        count: 0
       }, {
-        id: 24,
+        id: '24',
         name: 'Theft of motor vehicle and motorcycle',
         catagory: '',
-        description: ''
+        description: '',
+        count: 0
       }, {
-        id: 25,
+        id: '25',
         name: 'Theft out of or from motor vehicle',
         catagory: '',
-        description: ''
+        description: '',
+        count: 0
       }, {
-        id: 26,
+        id: '26',
         name: 'Total Sexual Crimes',
         catagory: '',
-        description: ''
+        description: '',
+        count: 0
       }, {
-        id: 27,
+        id: '27',
         name: 'Truck hijacking',
         catagory: '',
-        description: ''
+        description: '',
+        count: 0
       }, {
-        id: 28,
+        id: '28',
         name: 'Unlawful possession of firearms and ammunition',
         catagory: '',
-        description: ''
+        description: '',
+        count: 0
       }
     ],
     user: null,
-    loading: null,
+    loading: false,
     error: null
   },
   mutations: {
+    setLoadedCatagories (state, payload) {
+      state.loadedCatagories = payload
+    },
     setUser (state, payload) {
       state.user = payload
     },
@@ -250,9 +281,9 @@ export const store = new Vuex.Store({
       return state.catagory
     },
     loadedCatagory (state) {
-      return (catagoryName) => {
-        return state.loadedCatagories.find((catagory) => {
-          return catagory.name === catagoryName
+      return (catagoryId) => {
+        return state.catagory.find((catagory) => {
+          return catagory.id === catagoryId
         })
       }
     }
