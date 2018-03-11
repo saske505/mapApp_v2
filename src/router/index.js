@@ -38,7 +38,7 @@ export default new Router({
       component: Catagory
     },
     {
-      path: '/catagory/:name',
+      path: '/catagory/:id',
       name: 'catagory-content',
       component: CatagoryContent,
       props: true
