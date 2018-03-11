@@ -6,7 +6,7 @@
       dense
       dark
       >
-      <v-text-field prepend-icon="search" hide-details single-line></v-text-field>
+      <v-text-field dark prepend-icon="search" hide-details single-line></v-text-field>
       <v-btn icon>
         <v-icon>my_location</v-icon>
       </v-btn>
@@ -72,10 +72,34 @@
              >
              <v-card>
                <v-toolbar card dark color="primary">
-                    <v-btn icon @click.native="dialog = false" dark>
+                <v-btn icon @click.native="dialog = false" dark>
                   <v-icon>close</v-icon>
                 </v-btn>
+                <v-toolbar-title>Add incident</v-toolbar-title>
               </v-toolbar>
+              <v-card-media src="/static/doc-images/cards/desert.jpg" height="200px">
+      </v-card-media>
+      <v-card-title primary-title>
+        <div>
+          <h3 class="headline mb-0"></h3>
+          <div></div>
+        </div>
+      </v-card-title>
+              <v-flex xs10 offset-xs1>
+                  <v-card-text>
+                    <v-form>
+                    <v-text-field
+                    label="Name"
+                    required
+                    ></v-text-field>
+                    <v-text-field
+                    label="E-mail"
+                    required
+                    ></v-text-field>
+                    <app-select></app-select>
+                    </v-form>
+                  </v-card-text>
+              </v-flex>
              </v-card>
         </v-dialog>
       </v-layout>
@@ -83,8 +107,13 @@
   </div>
 </template>
 <script>
+import Select from './shared/select'
+
 export default {
   name: 'Home',
+  components: {
+    'app-select': Select
+  },
   data () {
     return {
       dialog: false
