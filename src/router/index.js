@@ -6,6 +6,7 @@ import SignIn from '@/components/auth/SignIn'
 import Profile from '@/components/auth/Profile'
 import Catagory from '@/components/content/page'
 import CatagoryContent from '@/components/content/page-content'
+import Incidents from '@/components/incident/main'
 
 Vue.use(Router)
 
@@ -41,6 +42,12 @@ export default new Router({
       path: '/catagory/:id',
       name: 'catagory-content',
       component: CatagoryContent,
+      props: true
+    },
+    {
+      path: '/admin/manage/incidents/',
+      name: 'incidents',
+      component: Incidents,
       props: true
     }
 

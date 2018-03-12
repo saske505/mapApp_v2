@@ -30,7 +30,7 @@
             <v-card-media
             class="white--text"
             height="auto"
-            src="/static/doc-images/cards/docks.jpg"
+            src=""
           >
             <v-container fluid fill-height>
               <v-layout fill-height>
@@ -77,7 +77,7 @@
                 </v-btn>
                 <v-toolbar-title>Add incident</v-toolbar-title>
               </v-toolbar>
-              <v-card-media src="/static/doc-images/cards/desert.jpg" height="200px">
+              <v-card-media src="" height="200px">
       </v-card-media>
       <v-card-title primary-title>
         <div>
@@ -96,7 +96,7 @@
                     label="E-mail"
                     required
                     ></v-text-field>
-                    <app-select></app-select>
+                    <app-select v-model="select" ></app-select>
                     </v-form>
                   </v-card-text>
               </v-flex>
@@ -132,7 +132,7 @@ export default {
       color: '',
       mode: '',
       timeout: 6000,
-      text: 'Hello, I\'m a snackbar'
+      text: ''
     }
   },
   computed: {

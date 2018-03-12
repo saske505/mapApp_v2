@@ -5,6 +5,8 @@ import App from './App'
 import 'babel-polyfill'
 import * as firebase from 'firebase'
 import router from './router'
+import axios from 'axios'
+import VueAxios from 'vue-axios'
 import Vuetify from 'vuetify'
 import { store } from './store'
 import colors from 'vuetify/es5/util/colors'
@@ -17,6 +19,8 @@ Vue.component('v-map', Vue2Leaflet.Map)
 Vue.component('v-tilelayer', Vue2Leaflet.TileLayer)
 Vue.component('v-marker', Vue2Leaflet.Marker)
 
+Vue.use(VueAxios, axios)
+
 Vue.use(Vuetify, {
   theme: {
     primary: colors.blue.base,
@@ -28,6 +32,7 @@ Vue.use(Vuetify, {
     warning: '#FFC107'
   }
 })
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

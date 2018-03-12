@@ -1,25 +1,19 @@
 <template>
-  <v-container fluid>
-    <v-layout row wrap>
-      <v-flex xs12 sm6>
-        <v-subheader></v-subheader>
-      </v-flex>
-      <v-flex xs12 sm6>
         <v-select
+        cache-items
         :items="stations"
         item-value="name"
         item-text="name"
         v-model="select"
         label="Police station:"
         hide-details
+        name="langSelect"
         id="langSelect"
       ></v-select>
-    </v-flex>
-  </v-layout>
-</v-container>
 </template>
 <script>
 export default {
+  props: ['modelName'],
   data () {
     return {
       stations: [
