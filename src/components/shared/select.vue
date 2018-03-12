@@ -10,7 +10,7 @@
         item-value="name"
         item-text="name"
         v-model="select"
-        label="Police station:"        
+        label="Police station:"
         hide-details
         id="langSelect"
       ></v-select>

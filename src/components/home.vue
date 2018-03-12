@@ -4,10 +4,10 @@
       <v-toolbar
       floating
       dense
-      dark
+      light
       >
-      <v-text-field dark prepend-icon="search" hide-details single-line></v-text-field>
-      <v-btn icon>
+      <v-text-field prepend-icon="search" hide-details single-line></v-text-field>
+      <v-btn icon  @click="myFilter" v-bind:class="{ isActive: isActive }" @click.native="snackbar = true">
         <v-icon>my_location</v-icon>
       </v-btn>
       <v-btn icon>
@@ -104,6 +104,16 @@
         </v-dialog>
       </v-layout>
     </v-container>
+    <v-snackbar
+     :timeout="timeout"
+     :color="color"
+     :multi-line="mode === 'multi-line'"
+     :vertical="mode === 'vertical'"
+     v-model="snackbar"
+   >
+     {{ text }}
+     <v-btn dark flat @click.native="snackbar = false">Close</v-btn>
+   </v-snackbar>
   </div>
 </template>
 <script>
@@ -116,12 +126,36 @@ export default {
   },
   data () {
     return {
-      dialog: false
+      dialog: false,
+      isActive: false,
+      snackbar: false,
+      color: '',
+      mode: '',
+      timeout: 6000,
+      text: 'Hello, I\'m a snackbar'
     }
   },
   computed: {
     catagories () {
       return this.$store.getters.loadedCatagories
+    }
+  },
+  methods: {
+    myFilter () {
+      this.isActive = !this.isActive
+      if (this.isActive === true) {
+        this.geoLoc(this.isActive)
+      } else {
+        this.geoLoc(this.isActive)
+      }
+    },
+    geoLoc (status) {
+      this.color = 'dark'
+      if (status === true) {
+        this.text = status
+      } else {
+        this.text = status
+      }
     }
   }
 }
