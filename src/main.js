@@ -11,13 +11,6 @@ import Vuetify from 'vuetify'
 import { store } from './store'
 import colors from 'vuetify/es5/util/colors'
 import 'vuetify/dist/vuetify.min.css'
-import Vue2Leaflet from 'vue2-leaflet'
-
-import 'leaflet/dist/leaflet.css'
-
-Vue.component('v-map', Vue2Leaflet.Map)
-Vue.component('v-tilelayer', Vue2Leaflet.TileLayer)
-Vue.component('v-marker', Vue2Leaflet.Marker)
 
 Vue.use(VueAxios, axios)
 

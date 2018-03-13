@@ -10,10 +10,10 @@
      </v-container>
    </v-jumbotron>
   <v-dialog v-model="dialog" max-width="500px">
-    <v-btn color="primary" dark slot="activator" class="mb-2">New Item</v-btn>
+    <v-btn color="primary" dark slot="activator" class="mb-2">{{ formTitle }}</v-btn>
     <v-card>
       <v-card-title>
-        <span class="headline">Add new incident</span>
+        <span class="headline">{{ formTitle }}</span>
       </v-card-title>
       <v-card-text>
         <v-container>
@@ -31,7 +31,7 @@
               id="type"
               name="type"
               ></v-select>
-              <app-select item-value="name" label="Reported station name" ></app-select>
+              <app-select v-model="item.location.reportedPoliceStationName"></app-select>
               <v-text-field label="address" name="address" v-model="item.location.address"></v-text-field>
               <v-text-field label="lat" name="lat" v-model="item.location.lat"></v-text-field>
               <v-text-field label="long" name="long" v-model="item.location.long"></v-text-field>
@@ -62,7 +62,7 @@
   <template slot="items" slot-scope="props">
        <td>{{ props.item.name }}</td>
        <td class="text-xs-right">{{ props.item.type }}</td>
-       <td class="text-xs-right">{{ props.item.location.city }}</td>
+       <td class="text-xs-right">{{ props.item.location.reportedPoliceStationName }}</td>
        <td class="text-xs-right">{{ props.item.incident.rating }}</td>
        <td class="text-xs-right">{{ props.item.incident.date }}</td>
        <td class="justify-center layout px-0">
@@ -105,6 +105,7 @@ export default {
       items: [],
       select: [],
       updateId: '',
+      editedIndex: -1,
       item: {
         location: {
           reportedPoliceStationName: '',
@@ -157,7 +158,7 @@ export default {
       var obj = {
         'name': this.item.incident.name,
         'type': this.item.incident.type,
-        'reportedPoliceStationName': this.item.incident.reportedPoliceStationName,
+        'reportedPoliceStationName': this.item.location.reportedPoliceStationName,
         'locationAddress': this.item.location.address,
         'locationLat': this.item.location.lat,
         'locationLong': this.item.location.long,
@@ -187,7 +188,7 @@ export default {
       var objUpdate = {
         'name': this.item.incident.name,
         'type': this.item.incident.type,
-        'reportedPoliceStationName': this.item.incident.reportedPoliceStationName,
+        'reportedPoliceStationName': this.item.location.reportedPoliceStationName,
         'locationAddress': this.item.location.address,
         'locationLat': this.item.location.lat,
         'locationLong': this.item.location.long,
@@ -247,6 +248,18 @@ export default {
         console.log(index)
         console.log(e)
       })
+    },
+    close () {
+      this.dialog = false
+      setTimeout(() => {
+        this.editedItem = Object.assign({}, this.defaultItem)
+        this.editedIndex = -1
+      }, 300)
+    },
+    editItem (item) {
+      this.editedIndex = this.items.indexOf(item)
+      this.editedItem = Object.assign({}, item)
+      this.dialog = true
     }
   },
   created: function () {

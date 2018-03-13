@@ -1,5 +1,6 @@
 <template>
         <v-select
+        v-on:change="updateValue"
         cache-items
         :items="stations"
         item-value="name"
@@ -7,13 +8,12 @@
         v-model="select"
         label="Police station:"
         hide-details
-        name="langSelect"
         id="langSelect"
       ></v-select>
 </template>
 <script>
 export default {
-  props: ['modelName'],
+  props: ['value'],
   data () {
     return {
       stations: [
@@ -9139,6 +9139,22 @@ export default {
         }
       ],
       select: []
+    }
+  },
+  created () {
+    if (this.value) {
+      this.item = this.value // set initial value
+    }
+  },
+  methods: {
+    updateValue (value) {
+      console.log(value)
+      this.$emit('input', value)
+    }
+  },
+  watch: {
+    value (val) {
+      this.item = val // watch for changes on v-model from parent
     }
   }
 }
