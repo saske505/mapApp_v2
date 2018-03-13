@@ -55,6 +55,20 @@ L.Icon.Default.mergeOptions({
 export default {
   data () {
     return {
+      states: [{
+        'type': 'Feature',
+        'properties': {'party': 'Republican'},
+        'geometry': {
+          'type': 'Polygon',
+          'coordinates': [[
+            [-104.05, 48.99],
+            [-97.22, 48.98],
+            [-96.58, 45.94],
+            [-104.03, 45.94],
+            [-104.05, 48.99]
+          ]]
+        }
+      }],
       loading: false,
       search: null,
       select: [],
@@ -65,7 +79,7 @@ export default {
       zoom: 10,
       center: [41, -1.219482],
       myMap: {},
-      L: window.L,
+      L: Window.L,
       url: 'http://{s}.tile.osm.org/{z}/{x}/{y}.png',
       attribution: '',
       markers: [
@@ -95,17 +109,6 @@ export default {
       this.provider.search({ query: val }).then((results) => {
         this.items = Object.keys(results).map(i => results[i].label)
       })
-    }
-  },
-  methods: {
-    querySelections (v) {
-      this.loading = true
-      setTimeout(() => {
-        this.items = Object.keys(this.provider).filter(e => {
-          return (e || '').toLowerCase().indexOf((v || '').toLowerCase()) > -1
-        })
-        this.loading = false
-      }, 500)
     }
   }
 }
