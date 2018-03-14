@@ -5,6 +5,11 @@
         <app-map></app-map>
     </v-layout>
   </v-jumbotron>
+  <v-tabs fixed-tabs>
+  <v-tab v-for="n in 3" :key="n">
+    Item {{ n }}
+  </v-tab>
+</v-tabs>
   <v-container grid-list-md text-xs>
     <v-layout row wrap>
       <v-flex xs4 v-for="catagory in catagories" :key="catagory.id">

@@ -88,7 +88,30 @@ export default {
         { id: '3', position: {lat: 52.005, lng: -0.09}, tooltip: 'tooltip for marker3', draggable: true, visible: true },
         { id: '4', position: {lat: -30.705, lng: 20.09}, tooltip: 'tooltip for marker4', draggable: true, visible: true }
       ],
+      Marker: {
+        id: null,
+        position: {
+          lat: 51.505,
+          long: -0.09
+        },
+        tooltip: '',
+        draggable: true,
+        visible: true
+      },
       crs: window.L.CRS.Simple
+    }
+  },
+  methods: {
+    createMarker (val) {
+      var mark = new this.Marker()
+      mark.id = this.getId()
+      mark.position.lat = val.position.lat
+      mark.position.lng = val.position.lng
+      mark.tooltip = val.tooltip
+      this.markers.push(mark)
+    },
+    getId (index) {
+      return this.markers.length
     }
   },
   components: {
